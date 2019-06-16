@@ -11,3 +11,17 @@
 
 4. will be using here callbacks and event handling as app will be recieving noti-
    -fications from the youtube API's.
+
+
+
+        16th june
+     ===============
+
+1. jst started off today by adding the layout for my app dynamically and also done the
+   the setup for the google api key for playing youtube videos in my app.
+
+2. at first found it difficult to get the google api key for the app but steps can be found on 
+   google documentation site itself.
+
+
+      
