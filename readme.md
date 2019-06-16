@@ -23,5 +23,10 @@
 2. at first found it difficult to get the google api key for the app but steps can be found on 
    google documentation site itself.
 
+3. jst added code for the oninitializefailue method.here i have used googles error dialog to help
+   users sort out some of their problems themselves.
+
+   more info on youtubeinitialization result : https://developers.google.com/youtube/android/player/reference/com/google/android/youtube/player/YouTubeInitializationResult
+
 
       
