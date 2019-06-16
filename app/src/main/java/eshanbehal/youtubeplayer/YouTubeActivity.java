@@ -2,6 +2,7 @@ package eshanbehal.youtubeplayer;
 
 import android.os.Bundle;
 import android.support.constraint.ConstraintLayout;
+import android.util.Log;
 import android.view.ViewGroup;
 import android.widget.Toast;
 
@@ -14,6 +15,8 @@ import java.util.IllegalFormatCodePointException;
 
 public class YouTubeActivity extends YouTubeBaseActivity
              implements YouTubePlayer.OnInitializedListener {
+
+    private static final String TAG = "YouTubeActivity";
 
     static final String GOOGLE_API_KEY ="AIzaSyCfvVwINObyO1Cw9NQgwVckxm3W7Vhuo1Y";
     static final String YOUTUBE_VIDEO_ID ="N5TqPDxNY-Q";
@@ -39,7 +42,9 @@ public class YouTubeActivity extends YouTubeBaseActivity
     }
 
     @Override
-    public void onInitializationSuccess(YouTubePlayer.Provider provider, YouTubePlayer youTubePlayer, boolean b) {
+    public void onInitializationSuccess(YouTubePlayer.Provider provider, YouTubePlayer youTubePlayer, boolean wasRestored) {
+        Log.d(TAG, "onInitializationSuccess: provider is " + provider.getClass().toString());
+        Toast.makeText(this , "Initialzed YoutubePlayer successfully " , Toast.LENGTH_LONG).show();
 
     }
 
