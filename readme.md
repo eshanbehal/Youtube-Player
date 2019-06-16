@@ -29,4 +29,18 @@
    more info on youtubeinitialization result : https://developers.google.com/youtube/android/player/reference/com/google/android/youtube/player/YouTubeInitializationResult
 
 
+4. next thing added is code for the oninitializeSuccess method for the app to work smoothly.
+
+
+
+
+
+
+
+
+
+
+              BY ESHAN_BEHAL
+
+
       
