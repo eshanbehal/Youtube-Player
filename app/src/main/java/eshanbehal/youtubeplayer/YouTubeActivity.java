@@ -3,18 +3,21 @@ package eshanbehal.youtubeplayer;
 import android.os.Bundle;
 import android.support.constraint.ConstraintLayout;
 import android.view.ViewGroup;
+import android.widget.Toast;
 
 import com.google.android.youtube.player.YouTubeBaseActivity;
 import com.google.android.youtube.player.YouTubeInitializationResult;
 import com.google.android.youtube.player.YouTubePlayer;
 import com.google.android.youtube.player.YouTubePlayerView;
 
+import java.util.IllegalFormatCodePointException;
+
 public class YouTubeActivity extends YouTubeBaseActivity
              implements YouTubePlayer.OnInitializedListener {
 
     static final String GOOGLE_API_KEY ="AIzaSyCfvVwINObyO1Cw9NQgwVckxm3W7Vhuo1Y";
-    static final String YOUTUBE_VIDEO_ID ="wyx6JDQCslE";
-    static final String YOUTUBE_PLAYLIST ="PLqMegF2OLokSK38nTMbBLPX3lVwr_IXBp&index=2&t=0s";
+    static final String YOUTUBE_VIDEO_ID ="N5TqPDxNY-Q";
+    static final String YOUTUBE_PLAYLIST ="PLqMegF2OLokSj4T_pxB6hcg3ff-r9l1t5&index=2&t=0s";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,9 +32,10 @@ public class YouTubeActivity extends YouTubeBaseActivity
 //        button1.setText("Button added");
 //        layout.addView(button1);
 
-        YouTubePlayerView player = new YouTubePlayerView(this);
-        player.setLayoutParams(new ConstraintLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT));
-        layout.addView(player);
+        YouTubePlayerView playerView = new YouTubePlayerView(this);
+        playerView.setLayoutParams(new ConstraintLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT));
+        layout.addView(playerView);
+        playerView.initialize(GOOGLE_API_KEY, this);
     }
 
     @Override
@@ -41,6 +45,23 @@ public class YouTubeActivity extends YouTubeBaseActivity
 
     @Override
     public void onInitializationFailure(YouTubePlayer.Provider provider, YouTubeInitializationResult youTubeInitializationResult) {
+        final int REQUEST_CODE = 1;
+
+        if(youTubeInitializationResult.isUserRecoverableError()) {
+            youTubeInitializationResult.getErrorDialog(this, REQUEST_CODE).show();
+        } else {
+            String errorMessage = String.format("There was an error initializing the YoutubePlayer (%1$s)", youTubeInitializationResult.toString());
+            Toast.makeText(this, errorMessage, Toast.LENGTH_LONG).show();
+        }
 
     }
 }
+
+
+
+
+
+
+
+
+
