@@ -21,27 +21,46 @@ public class StandaloneActivitty extends AppCompatActivity implements View.OnCli
 
         btnPlayVideo.setOnClickListener(this);
         btnPlaylist.setOnClickListener(this);
+
+//        View.OnClickListener ourListener = new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//
+//            }
+//        };
+//
+//        btnPlayVideo.setOnClickListener(ourListener);
+//        btnPlaylist.setOnClickListener(ourListener);
+//
+//        btnPlayVideo.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//
+//            }
+//        });
     }
 
     @Override
     public void onClick(View view) {
         Intent intent = null;
 
-        switch (view.getId()){
+        switch(view.getId()) {
             case R.id.btnPlayVideo:
-                YouTubeStandalonePlayer.createVideoIntent(this , YouTubeActivity.GOOGLE_API_KEY , YouTubeActivity.YOUTUBE_VIDEO_ID);
+                intent = YouTubeStandalonePlayer.createVideoIntent(this, YouTubeActivity.GOOGLE_API_KEY, YouTubeActivity.YOUTUBE_VIDEO_ID);
                 break;
 
             case R.id.btnPlayList:
-                YouTubeStandalonePlayer.createVideoIntent(this , YouTubeActivity.GOOGLE_API_KEY , YouTubeActivity.YOUTUBE_PLAYLIST);
+                intent = YouTubeStandalonePlayer.createPlaylistIntent(this, YouTubeActivity.GOOGLE_API_KEY, YouTubeActivity.YOUTUBE_PLAYLIST);
                 break;
 
-                default:
+            default:
+
         }
 
-        if (intent != null ){
+        if(intent != null) {
             startActivity(intent);
         }
+
 
     }
 }

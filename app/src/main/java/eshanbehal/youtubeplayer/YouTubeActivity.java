@@ -11,16 +11,14 @@ import com.google.android.youtube.player.YouTubeInitializationResult;
 import com.google.android.youtube.player.YouTubePlayer;
 import com.google.android.youtube.player.YouTubePlayerView;
 
-import java.util.IllegalFormatCodePointException;
-
 public class YouTubeActivity extends YouTubeBaseActivity
-             implements YouTubePlayer.OnInitializedListener {
+        implements YouTubePlayer.OnInitializedListener {
 
     private static final String TAG = "YouTubeActivity";
 
-    static final String GOOGLE_API_KEY ="AIzaSyBJUqRVtU1M5GqG8Nv9dZ8-PUz6p656S_8";
-    static final String YOUTUBE_VIDEO_ID ="j6muwUGdvXw";
-    static final String YOUTUBE_PLAYLIST ="RDj6muwUGdvXw&start_radio=1";
+    static final String GOOGLE_API_KEY = "AIzaSyBJUqRVtU1M5GqG8Nv9dZ8-PUz6p656S_8";
+    static final String YOUTUBE_VIDEO_ID = "ElpitAfkRS4";
+    static final String YOUTUBE_PLAYLIST = "PLXtTjtWmQhg1SsviTmKkWO5n0a_-T0bnD";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -44,12 +42,12 @@ public class YouTubeActivity extends YouTubeBaseActivity
     @Override
     public void onInitializationSuccess(YouTubePlayer.Provider provider, YouTubePlayer youTubePlayer, boolean wasRestored) {
         Log.d(TAG, "onInitializationSuccess: provider is " + provider.getClass().toString());
-        Toast.makeText(this , "Initialzed YoutubePlayer successfully " , Toast.LENGTH_LONG).show();
+        Toast.makeText(this, "Initialized Youtube Player successfully", Toast.LENGTH_LONG).show();
 
         youTubePlayer.setPlaybackEventListener(playbackEventListener);
         youTubePlayer.setPlayerStateChangeListener(playerStateChangeListener);
 
-        if (!wasRestored){
+        if(!wasRestored) {
             youTubePlayer.cueVideo(YOUTUBE_VIDEO_ID);
         }
 
@@ -65,24 +63,23 @@ public class YouTubeActivity extends YouTubeBaseActivity
             String errorMessage = String.format("There was an error initializing the YoutubePlayer (%1$s)", youTubeInitializationResult.toString());
             Toast.makeText(this, errorMessage, Toast.LENGTH_LONG).show();
         }
-
     }
 
     private YouTubePlayer.PlaybackEventListener playbackEventListener = new YouTubePlayer.PlaybackEventListener() {
         @Override
         public void onPlaying() {
-            Toast.makeText(YouTubeActivity.this , "Good, Video is playing ok." , Toast.LENGTH_LONG).show();
+            Toast.makeText(YouTubeActivity.this, "Good, Video is playing ok.", Toast.LENGTH_LONG).show();
         }
 
         @Override
         public void onPaused() {
-            Toast.makeText(YouTubeActivity.this , "Video has paused." , Toast.LENGTH_LONG).show();
+            Toast.makeText(YouTubeActivity.this, "Video has paused.", Toast.LENGTH_LONG).show();
 
         }
 
         @Override
         public void onStopped() {
-            Toast.makeText(YouTubeActivity.this , "Video has stopped." , Toast.LENGTH_LONG).show();
+            Toast.makeText(YouTubeActivity.this, "Video has stopped.", Toast.LENGTH_LONG).show();
 
         }
 
@@ -96,6 +93,7 @@ public class YouTubeActivity extends YouTubeBaseActivity
 
         }
     };
+
     private YouTubePlayer.PlayerStateChangeListener playerStateChangeListener = new YouTubePlayer.PlayerStateChangeListener() {
         @Override
         public void onLoading() {
@@ -109,19 +107,19 @@ public class YouTubeActivity extends YouTubeBaseActivity
 
         @Override
         public void onAdStarted() {
-            Toast.makeText(YouTubeActivity.this , "Click ad now! Make creator rich." , Toast.LENGTH_LONG).show();
+            Toast.makeText(YouTubeActivity.this, "Click ad now! Make creator rich.", Toast.LENGTH_LONG).show();
 
         }
 
         @Override
         public void onVideoStarted() {
-            Toast.makeText(YouTubeActivity.this , "Video has started." , Toast.LENGTH_LONG).show();
+            Toast.makeText(YouTubeActivity.this, "Video has started.", Toast.LENGTH_LONG).show();
 
         }
 
         @Override
         public void onVideoEnded() {
-            Toast.makeText(YouTubeActivity.this , "Congratulations!, you have completed another video." , Toast.LENGTH_LONG).show();
+            Toast.makeText(YouTubeActivity.this, "Congratulations!, you have completed another video.", Toast.LENGTH_LONG).show();
 
         }
 
