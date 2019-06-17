@@ -19,12 +19,12 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".YouTubeActivity"
+            android:name=".YoutubeActivity"
             android:label="Youtube Player">
 
         </activity>
         <activity
-            android:name=".StandaloneActivitty"
+            android:name=".StandaloneActivity"
             android:label="Standalone Activity">
 
         </activity>
