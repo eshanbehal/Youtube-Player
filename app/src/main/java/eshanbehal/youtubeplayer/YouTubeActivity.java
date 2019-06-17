@@ -19,8 +19,8 @@ public class YouTubeActivity extends YouTubeBaseActivity
     private static final String TAG = "YouTubeActivity";
 
     static final String GOOGLE_API_KEY ="AIzaSyBJUqRVtU1M5GqG8Nv9dZ8-PUz6p656S_8";
-    static final String YOUTUBE_VIDEO_ID ="hv-KeGvzaVU";
-    static final String YOUTUBE_PLAYLIST ="PLqVogDpd6RSUudToKSTmx500EwQo3eEwG&index=2&t=0s";
+    static final String YOUTUBE_VIDEO_ID ="j6muwUGdvXw";
+    static final String YOUTUBE_PLAYLIST ="RDj6muwUGdvXw&start_radio=1";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -45,6 +45,13 @@ public class YouTubeActivity extends YouTubeBaseActivity
     public void onInitializationSuccess(YouTubePlayer.Provider provider, YouTubePlayer youTubePlayer, boolean wasRestored) {
         Log.d(TAG, "onInitializationSuccess: provider is " + provider.getClass().toString());
         Toast.makeText(this , "Initialzed YoutubePlayer successfully " , Toast.LENGTH_LONG).show();
+
+        youTubePlayer.setPlaybackEventListener(playbackEventListener);
+        youTubePlayer.setPlayerStateChangeListener(playerStateChangeListener);
+
+        if (!wasRestored){
+            youTubePlayer.cueVideo(YOUTUBE_VIDEO_ID);
+        }
 
     }
 
@@ -75,6 +82,7 @@ public class YouTubeActivity extends YouTubeBaseActivity
 
         @Override
         public void onStopped() {
+            Toast.makeText(YouTubeActivity.this , "Video has stopped." , Toast.LENGTH_LONG).show();
 
         }
 

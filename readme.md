@@ -45,6 +45,11 @@
 
    and have added toast messages to some of those methods of these interfaces.
 
+3. added code for the various methods like onplaying and onpaused methods and also added listeners to 
+   call these in the oninitializesuccess method.
+
+   more on the methods used : https://developers.google.com/youtube/android/player/reference/com/google/android/youtube/player/package-summary
+
 
 
 
