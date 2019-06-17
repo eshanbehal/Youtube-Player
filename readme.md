@@ -70,6 +70,9 @@
 
    for YOUTUBE STANDALONE PLAYER: https://developers.google.com/youtube/android/player/reference/com/google/android/youtube/player/YouTubeStandalonePlayer
 
+8. dealt with some minor changes to the app by modifying some code in the standalone activity section and
+   made the app fully funtionable.
+
 
 
 
