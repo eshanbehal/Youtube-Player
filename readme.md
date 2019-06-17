@@ -50,6 +50,11 @@
 
    more on the methods used : https://developers.google.com/youtube/android/player/reference/com/google/android/youtube/player/package-summary
 
+4. For adding some more functionality to my app adding more activities to my app by using the 
+   concept of intents.
+
+5. started by creating the layouts for the the activities and added buttons for both the layout pages.
+
 
 
 
