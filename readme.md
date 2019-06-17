@@ -57,6 +57,18 @@
 
 6. added code for the layouts designed for the app by using the intents.
 
+   INTENTS: It is an abstract description of an operation to be performed.It binds the activities together.
+   Usually used to launch the activities in our app.
+
+   eg here i have created video intent and playlist intent.
+
+7. added code for the main activity and created my own intent.
+
+   more info on intents: https://developer.android.com/reference/android/content/Intent.html
+
+   for INTENT FILTERS: https://developer.android.com/guide/components/intents-filters.html
+
+   for YOUTUBE STANDALONE PLAYER: https://developers.google.com/youtube/android/player/reference/com/google/android/youtube/player/YouTubeStandalonePlayer
 
 
 
