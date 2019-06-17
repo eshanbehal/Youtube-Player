@@ -60,6 +60,68 @@ public class YouTubeActivity extends YouTubeBaseActivity
         }
 
     }
+
+    private YouTubePlayer.PlaybackEventListener playbackEventListener = new YouTubePlayer.PlaybackEventListener() {
+        @Override
+        public void onPlaying() {
+            Toast.makeText(YouTubeActivity.this , "Good, Video is playing ok." , Toast.LENGTH_LONG).show();
+        }
+
+        @Override
+        public void onPaused() {
+            Toast.makeText(YouTubeActivity.this , "Video has paused." , Toast.LENGTH_LONG).show();
+
+        }
+
+        @Override
+        public void onStopped() {
+
+        }
+
+        @Override
+        public void onBuffering(boolean b) {
+
+        }
+
+        @Override
+        public void onSeekTo(int i) {
+
+        }
+    };
+    private YouTubePlayer.PlayerStateChangeListener playerStateChangeListener = new YouTubePlayer.PlayerStateChangeListener() {
+        @Override
+        public void onLoading() {
+
+        }
+
+        @Override
+        public void onLoaded(String s) {
+
+        }
+
+        @Override
+        public void onAdStarted() {
+            Toast.makeText(YouTubeActivity.this , "Click ad now! Make creator rich." , Toast.LENGTH_LONG).show();
+
+        }
+
+        @Override
+        public void onVideoStarted() {
+            Toast.makeText(YouTubeActivity.this , "Video has started." , Toast.LENGTH_LONG).show();
+
+        }
+
+        @Override
+        public void onVideoEnded() {
+            Toast.makeText(YouTubeActivity.this , "Congratulations!, you have completed another video." , Toast.LENGTH_LONG).show();
+
+        }
+
+        @Override
+        public void onError(YouTubePlayer.ErrorReason errorReason) {
+
+        }
+    };
 }
 
 
