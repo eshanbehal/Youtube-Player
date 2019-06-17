@@ -55,6 +55,8 @@
 
 5. started by creating the layouts for the the activities and added buttons for both the layout pages.
 
+6. added code for the layouts designed for the app by using the intents.
+
 
 
 
