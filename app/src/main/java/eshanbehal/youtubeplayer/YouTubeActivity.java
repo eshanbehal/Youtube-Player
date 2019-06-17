@@ -18,9 +18,9 @@ public class YouTubeActivity extends YouTubeBaseActivity
 
     private static final String TAG = "YouTubeActivity";
 
-    static final String GOOGLE_API_KEY ="AIzaSyCfvVwINObyO1Cw9NQgwVckxm3W7Vhuo1Y";
-    static final String YOUTUBE_VIDEO_ID ="N5TqPDxNY-Q";
-    static final String YOUTUBE_PLAYLIST ="PLqMegF2OLokSj4T_pxB6hcg3ff-r9l1t5&index=2&t=0s";
+    static final String GOOGLE_API_KEY ="AIzaSyBJUqRVtU1M5GqG8Nv9dZ8-PUz6p656S_8";
+    static final String YOUTUBE_VIDEO_ID ="hv-KeGvzaVU";
+    static final String YOUTUBE_PLAYLIST ="PLqVogDpd6RSUudToKSTmx500EwQo3eEwG&index=2&t=0s";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
