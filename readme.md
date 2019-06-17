@@ -33,6 +33,22 @@
 
 
 
+       17th june
+    ===============
+
+1. jst starting off today by adding listener to the code.
+
+   added two types of listeners: playback event listner and state change listener.
+
+2. these listener are just like interfaces in which we have to implement all the methods provided
+   by these.
+
+   and have added toast messages to some of those methods of these interfaces.
+
+
+
+
+
 
 
 
